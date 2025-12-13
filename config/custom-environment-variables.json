@@ -1,0 +1,10 @@
+{
+  "environment": "environment",
+  "projectName": "projectName",
+  "jwtPrivateKey": "devApp_jwtPrivateKey",
+  "dbLink": "devApp_dbLink_string",
+  "port": "aman_global_insurance_port",
+  "cheatOTP": "true",
+  "apiDomain": "apiDomain",
+  "apiHost": "apiHost"
+}
