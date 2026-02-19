@@ -16,7 +16,11 @@ function toObjectId(id) {
 }
 
 // Add Member (Create)
+<<<<<<< HEAD
 router.post("/journal-member/add", identityManager(["admin", "superAdmin"]), async (req, res) => {
+=======
+router.post("/add", identityManager(["admin", "superAdmin"]), async (req, res) => {
+>>>>>>> development-dummy
     try {
         const { journalId, userId, membershipExpiration } = req.body;
 
@@ -39,7 +43,11 @@ router.post("/journal-member/add", identityManager(["admin", "superAdmin"]), asy
 });
 
 // List Members for a Particular Journal (Read)
+<<<<<<< HEAD
 router.get("/journal-member/list", async (req, res) => {
+=======
+router.get("/list", async (req, res) => {
+>>>>>>> development-dummy
     try {
         const { journalId } = req.query;
         if (!journalId) return res.status(400).json({ message: "Journal ID is required." });
@@ -70,7 +78,11 @@ router.get("/journal-member/user/:userId", async (req, res) => {
 });
 
 // Update Membership (Update)
+<<<<<<< HEAD
 router.patch("/journal-member/update/:id", identityManager(["admin", "superAdmin"]), async (req, res) => {
+=======
+router.patch("/update/:id", identityManager(["admin", "superAdmin"]), async (req, res) => {
+>>>>>>> development-dummy
     try {
         const { membershipExpiration, status } = req.body;
         
@@ -92,7 +104,11 @@ router.patch("/journal-member/update/:id", identityManager(["admin", "superAdmin
 });
 
 // Remove Member (Delete)
+<<<<<<< HEAD
 router.delete("/journal-member/remove/:id", identityManager(["admin", "superAdmin"]), async (req, res) => {
+=======
+router.delete("/remove/:id", identityManager(["admin", "superAdmin"]), async (req, res) => {
+>>>>>>> development-dummy
     try {
         const deleted = await JournalMember.findByIdAndDelete(req.params.id);
         if (!deleted) return res.status(404).json({ message: "Record not found." });
@@ -103,7 +119,11 @@ router.delete("/journal-member/remove/:id", identityManager(["admin", "superAdmi
 });
 
 // Get Single Membership
+<<<<<<< HEAD
 router.get("/journal-member/:id", async (req, res) => {
+=======
+router.get("/:id", async (req, res) => {
+>>>>>>> development-dummy
     try {
         const membership = await JournalMember.findById(req.params.id)
             .populate("journalId", "title acronym")

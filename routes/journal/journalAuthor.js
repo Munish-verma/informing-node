@@ -16,7 +16,11 @@ function toObjectId(id) {
 }
 
 // Add Author (Create)
+<<<<<<< HEAD
 router.post("/journal-author/add", identityManager(["admin", "superAdmin"]), async (req, res) => {
+=======
+router.post("/add", identityManager(["admin", "superAdmin"]), async (req, res) => {
+>>>>>>> development-dummy
     try {
         const { journalId, userId } = req.body;
 
@@ -38,7 +42,11 @@ router.post("/journal-author/add", identityManager(["admin", "superAdmin"]), asy
 });
 
 // List Authors (Read)
+<<<<<<< HEAD
 router.get("/journal-author/list", async (req, res) => {
+=======
+router.get("/list", async (req, res) => {
+>>>>>>> development-dummy
     try {
         const { journalId } = req.query;
         if (!journalId) return res.status(400).json({ message: "Journal ID is required." });
@@ -57,7 +65,11 @@ router.get("/journal-author/list", async (req, res) => {
 });
 
 // Update Author Status
+<<<<<<< HEAD
 router.patch("/journal-author/update/:id", identityManager(["admin", "superAdmin"]), async (req, res) => {
+=======
+router.patch("/update/:id", identityManager(["admin", "superAdmin"]), async (req, res) => {
+>>>>>>> development-dummy
     try {
         const { status } = req.body;
         
@@ -78,7 +90,11 @@ router.patch("/journal-author/update/:id", identityManager(["admin", "superAdmin
 });
 
 // Remove Author (Delete)
+<<<<<<< HEAD
 router.delete("/journal-author/remove/:id", identityManager(["admin", "superAdmin"]), async (req, res) => {
+=======
+router.delete("/remove/:id", identityManager(["admin", "superAdmin"]), async (req, res) => {
+>>>>>>> development-dummy
     try {
         const deleted = await JournalAuthor.findByIdAndDelete(req.params.id);
         
@@ -93,7 +109,11 @@ router.delete("/journal-author/remove/:id", identityManager(["admin", "superAdmi
 });
 
 // Get Single Author
+<<<<<<< HEAD
 router.get("/journal-author/:id", async (req, res) => {
+=======
+router.get("/:id", async (req, res) => {
+>>>>>>> development-dummy
     try {
         const author = await JournalAuthor.findById(req.params.id)
             .populate("userId", "personalName familyName email profilePic");

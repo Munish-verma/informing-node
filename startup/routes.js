@@ -1,6 +1,7 @@
 "use strict";
 
 const express = require("express");
+const cors = require("cors");
 const swaggerUi = require("swagger-ui-express");
 const swaggerDocument = require("../swagger_output.json");
 
@@ -54,8 +55,34 @@ const webviews = require("../routes/media/webviews.js");
 // Dashboard routes
 const dashboard = require("../routes/dashboard/dashboard.js");
 
+// Category routes
+const categories = require("../routes/category.js");
+
 module.exports = function (app) {
   app.use(express.json());
+
+  const allowedOrigins = [
+    "https://www.informingscience.fyi",
+    "https://informingscience.fyi",
+    "http://localhost:5173"
+  ];
+
+  app.use(
+    cors({
+      origin: function (origin, callback) {
+        // Allow requests with no origin (like mobile apps or curl requests)
+        if (!origin) return callback(null, true);
+
+        if (allowedOrigins.indexOf(origin) === -1) {
+          const msg =
+            "The CORS policy for this site does not allow access from the specified Origin.";
+          return callback(new Error(msg), false);
+        }
+        return callback(null, true);
+      },
+      credentials: true,
+    }),
+  );
 
   // Request logging middleware
   app.use((req, res, next) => {
@@ -90,7 +117,7 @@ module.exports = function (app) {
   app.use("/api", reminder);
   app.use("/api", selection);
   app.use("/api/abstract-breakdown", abstractBreakdown);
-  
+
   // Conference routes
   app.use("/api/conference", conferences);
   app.use("/api/conference-abstract", conferenceAbstract);
@@ -120,9 +147,12 @@ module.exports = function (app) {
   app.use("/api/banner", banners);
   app.use("/api/mediaUpload", mediaUpload);
   app.use("/api/webviews", webviews);
-  
+
   // Dashboard routes
   app.use("/api/dashboard", dashboard);
+
+  // Category routes
+  app.use("/api/category", categories);
 
   // Swagger Documentation
   app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(swaggerDocument));
