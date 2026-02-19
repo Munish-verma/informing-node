@@ -53,10 +53,10 @@ router.get("/list", async (req, res) => {
             query.isActive = isActive === "true";
         }
         
-        console.log("Fetching reminders with query:", query);
+        // console.log("Fetching reminders with query:", query);
         
         const list = await ConferenceReminder.find(query).sort({ days: 1 });
-        console.log("Found reminders:", list.length);
+        // console.log("Found reminders:", list.length);
         
         return res.status(200).json({ status: 200, data: list });
     } catch (error) {

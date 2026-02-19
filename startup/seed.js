@@ -25,7 +25,7 @@ module.exports = async function () {
         admin: true,
       }
       await Admin.create(newAdmin);
-      console.log("Default admin created");
+      // console.log("Default admin created");
     }
 
     // Create dummy Evaluation Forms if not exists
@@ -57,7 +57,7 @@ module.exports = async function () {
       const existingForm = await EvaluationForm.findOne({ title: formData.title });
       if (!existingForm) {
         await EvaluationForm.create(formData);
-        console.log(`Dummy form created: ${formData.title}`);
+        // console.log(`Dummy form created: ${formData.title}`);
       }
     }
 
@@ -78,11 +78,11 @@ module.exports = async function () {
       const existingSection = await AbstractBreakdown.findOne({ name: section.name });
       if (!existingSection) {
         await AbstractBreakdown.create(section);
-        console.log(`Abstract section created: ${section.name}`);
+        // console.log(`Abstract section created: ${section.name}`);
       }
     }
 
-    console.log("Database seeding completed");
+    // console.log("Database seeding completed");
 
   } catch (err) {
     console.error("Error seeding database:", err);

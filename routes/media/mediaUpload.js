@@ -14,10 +14,10 @@ const { success, successList, failure, internalError } = require("../../helper/r
 
 async function uploadMedia({ key, data, contentType, folderName }) {
 
-    console.log("ENVIRONMENT:", config.get('environment'));
-    console.log("S3_BUCKET_REGION:", config.get('S3_BUCKET_REGION'));
-    console.log("S3_BUCKET_NAME:", config.get('S3_BUCKET_NAME'));
-    console.log("S3_ENDPOINT:", 'https://hel1.your-objectstorage.com');
+    // console.log("ENVIRONMENT:", config.get('environment'));
+    // console.log("S3_BUCKET_REGION:", config.get('S3_BUCKET_REGION'));
+    // console.log("S3_BUCKET_NAME:", config.get('S3_BUCKET_NAME'));
+    // console.log("S3_ENDPOINT:", 'https://hel1.your-objectstorage.com');
 
 
     if (config.get('environment') === 'dev') {

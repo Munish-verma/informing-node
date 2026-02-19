@@ -22,7 +22,7 @@ function validateConferenceCreate(data) {
 
     let result = schema.validate(data, { abortEarly: false });
     if (result.error) {
-        console.log("Validation Errors:", result.error.details);
+        // console.log("Validation Errors:", result.error.details);
         result.error.details[0].message = valMsgFormatter(result.error.details[0].message);
     }
     return result;
@@ -47,7 +47,7 @@ function validateConferenceUpdate(data) {
 
     let result = schema.validate(data, { abortEarly: false });
     if (result.error) {
-        console.log("Validation Errors:", result.error.details);
+        // console.log("Validation Errors:", result.error.details);
         result.error.details[0].message = valMsgFormatter(result.error.details[0].message);
     }
     return result;
@@ -66,7 +66,7 @@ function validateConferenceList(data) {
 
     let result = schema.validate(data, { abortEarly: false });
     if (result.error) {
-        console.log("Validation Errors:", result.error.details);
+        // console.log("Validation Errors:", result.error.details);
         result.error.details[0].message = valMsgFormatter(result.error.details[0].message);
     }
     return result;

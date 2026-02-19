@@ -22,7 +22,7 @@ const swagger = async function () {
     const endpointsFiles = ['./startup/routes.js'];
     await swaggerAutogen(outputFile, endpointsFiles, doc);
     */
-    console.log('Swagger documentation disabled in development mode.');
+    // console.log('Swagger documentation disabled in development mode.');
 };
 
 module.exports = swagger;

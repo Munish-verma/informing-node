@@ -91,12 +91,12 @@ module.exports = function (app) {
     const url = req.originalUrl || req.url;
     const ip = req.ip || req.connection.remoteAddress;
 
-    console.log(`[${timestamp}] ${method} ${url} - IP: ${ip}`);
+    // console.log(`[${timestamp}] ${method} ${url} - IP: ${ip}`);
 
     // Log response when finished
     res.on("finish", () => {
       const statusCode = res.statusCode;
-      console.log(`[${timestamp}] ${method} ${url} - Status: ${statusCode}`);
+      // console.log(`[${timestamp}] ${method} ${url} - Status: ${statusCode}`);
     });
 
     next();

@@ -23,7 +23,7 @@ router.post(
   identityManager(["admin", "superAdmin"]),
   async (req, res) => {
     try {
-      console.log("Save topic selections request:", req.body);
+      // console.log("Save topic selections request:", req.body);
       
       const { conferenceId, topics, subTopics } = req.body;
 
@@ -106,7 +106,7 @@ router.post(
         }
       }
 
-      console.log("Unique selections:", uniqueSelections);
+      // console.log("Unique selections:", uniqueSelections);
 
       if (uniqueSelections.length === 0) {
         return res.json({
@@ -124,14 +124,14 @@ router.post(
         } catch (err) {
           // Skip duplicates - already exists
           if (err.code === 11000) {
-            console.log("Skipping duplicate:", selection);
+            // console.log("Skipping duplicate:", selection);
             continue;
           }
           throw err;
         }
       }
 
-      console.log("Saved data count:", savedCount);
+      // console.log("Saved data count:", savedCount);
 
       res.status(200).json({
         success: true,

@@ -28,14 +28,14 @@ router.get("/get-all-data", async (req, res) => {
         }
 
         // DEBUG: Log model field info
-        console.log("DEBUG: Article model fields:", Object.keys(Article.schema.paths));
-        console.log("DEBUG: ArticleType model fields:", Object.keys(ArticleType.schema.paths));
+        // console.log("DEBUG: Article model fields:", Object.keys(Article.schema.paths));
+        // console.log("DEBUG: ArticleType model fields:", Object.keys(ArticleType.schema.paths));
         
         // DEBUG: Test query with both models
         const articleResults = await Article.find({ conferenceId: targetConfId }).lean();
         const articleTypeResults = await ArticleType.find({ conferenceId: targetConfId }).lean();
-        console.log("DEBUG: Article.find() result count:", articleResults.length);
-        console.log("DEBUG: ArticleType.find() result count:", articleTypeResults.length);
+        // console.log("DEBUG: Article.find() result count:", articleResults.length);
+        // console.log("DEBUG: ArticleType.find() result count:", articleTypeResults.length);
 
         // Fetch all tracks and article types (Article without conferenceId filter), plus current selections
         const [allTracks, allTypes, currentSelections] = await Promise.all([

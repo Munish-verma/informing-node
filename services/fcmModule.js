@@ -6,7 +6,7 @@ const config = require('config');
 const admin = require('firebase-admin');
 const notifications = require("../config/notifications.js");
 
-console.log(`\n "${config.get("environment")}" \n`);
+// console.log(`\n "${config.get("environment")}" \n`);
 
 let isFcmInitialized = false;
 try {
@@ -15,7 +15,7 @@ try {
         credential: admin.credential.cert(serviceAccount),
     });
     isFcmInitialized = true;
-    console.log("Firebase Admin initialized successfully");
+    // console.log("Firebase Admin initialized successfully");
 } catch (error) {
     console.warn("Firebase Admin initialization failed. FCM notifications will be disabled.", error.message);
 }
@@ -136,19 +136,19 @@ async function sendFcmNotification(token, data, type) {
             message.data.click_action = "FLUTTER_NOTIFICATION_CLICK";
     }
 
-    console.log(message, "message")
+    // console.log(message, "message")
 
     try {
         await admin.messaging().send(message).then(async (response) => {
-            console.log("\n\n******* SUCCESS FCM NOTIFICATION: " + response + " |Type: " + type + " |DataType: " + data.type + " |RecId: " + data.receiverId + "*********\n");
-            console.log("\nNotificationData......", data);
+            // console.log("\n\n******* SUCCESS FCM NOTIFICATION: " + response + " |Type: " + type + " |DataType: " + data.type + " |RecId: " + data.receiverId + "*********\n");
+            // console.log("\nNotificationData......", data);
 
             fcmLog.status = "success";
             fcmLog.payload = message;
             fcmLog.response = response;
             await fcmLog.save();
         }).catch(async (error) => {
-            console.log("Error sending message:", error);
+            // console.log("Error sending message:", error);
             fcmLog.status = "failed";
             fcmLog.payload = message;
             fcmLog.response = error;

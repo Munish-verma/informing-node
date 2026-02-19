@@ -13,7 +13,7 @@ function validateTopicCreate(data) {
 
     let result = schema.validate(data, { abortEarly: false });
     if (result.error) {
-        console.log("Validation Errors:", result.error.details);
+        // console.log("Validation Errors:", result.error.details);
         result.error.details[0].message = valMsgFormatter(result.error.details[0].message);
     }
     return result;
@@ -29,7 +29,7 @@ function validateTopicUpdate(data) {
 
     let result = schema.validate(data, { abortEarly: false });
     if (result.error) {
-        console.log("Validation Errors:", result.error.details);
+        // console.log("Validation Errors:", result.error.details);
         result.error.details[0].message = valMsgFormatter(result.error.details[0].message);
     }
     return result;
@@ -44,7 +44,7 @@ function validateTopicList(data) {
 
     let result = schema.validate(data, { abortEarly: false });
     if (result.error) {
-        console.log("Validation Errors:", result.error.details);
+        // console.log("Validation Errors:", result.error.details);
         result.error.details[0].message = valMsgFormatter(result.error.details[0].message);
     }
     return result;
@@ -62,7 +62,7 @@ function validateSubTopicCreate(data) {
 
     let result = schema.validate(data, { abortEarly: false });
     if (result.error) {
-        console.log("Validation Errors:", result.error.details);
+        // console.log("Validation Errors:", result.error.details);
         result.error.details[0].message = valMsgFormatter(result.error.details[0].message);
     }
     return result;
@@ -79,7 +79,7 @@ function validateSubTopicUpdate(data) {
 
     let result = schema.validate(data, { abortEarly: false });
     if (result.error) {
-        console.log("Validation Errors:", result.error.details);
+        // console.log("Validation Errors:", result.error.details);
         result.error.details[0].message = valMsgFormatter(result.error.details[0].message);
     }
     return result;
@@ -94,7 +94,7 @@ function validateSubTopicList(data) {
 
     let result = schema.validate(data, { abortEarly: false });
     if (result.error) {
-        console.log("Validation Errors:", result.error.details);
+        // console.log("Validation Errors:", result.error.details);
         result.error.details[0].message = valMsgFormatter(result.error.details[0].message);
     }
     return result;
@@ -108,7 +108,7 @@ function validateTrackCreate(data) {
 
     let result = schema.validate(data, { abortEarly: false });
     if (result.error) {
-        console.log("Validation Errors:", result.error.details);
+        // console.log("Validation Errors:", result.error.details);
         result.error.details[0].message = valMsgFormatter(result.error.details[0].message);
     }
     return result;
@@ -123,7 +123,7 @@ function validateTrackUpdate(data) {
 
     let result = schema.validate(data, { abortEarly: false });
     if (result.error) {
-        console.log("Validation Errors:", result.error.details);
+        // console.log("Validation Errors:", result.error.details);
         result.error.details[0].message = valMsgFormatter(result.error.details[0].message);
     }
     return result;
@@ -138,7 +138,7 @@ function validateTrackList(data) {
 
     let result = schema.validate(data, { abortEarly: false });
     if (result.error) {
-        console.log("Validation Errors:", result.error.details);
+        // console.log("Validation Errors:", result.error.details);
         result.error.details[0].message = valMsgFormatter(result.error.details[0].message);
     }
     return result;
@@ -151,7 +151,7 @@ function validateArticleCreate(data) {
 
     let result = schema.validate(data, { abortEarly: false });
     if (result.error) {
-        console.log("Validation Errors:", result.error.details);
+        // console.log("Validation Errors:", result.error.details);
         result.error.details[0].message = valMsgFormatter(result.error.details[0].message);
     }
     return result;
@@ -165,7 +165,7 @@ function validateArticleUpdate(data) {
 
     let result = schema.validate(data, { abortEarly: false });
     if (result.error) {
-        console.log("Validation Errors:", result.error.details);
+        // console.log("Validation Errors:", result.error.details);
         result.error.details[0].message = valMsgFormatter(result.error.details[0].message);
     }
     return result;
@@ -180,7 +180,7 @@ function validateArticleList(data) {
 
     let result = schema.validate(data, { abortEarly: false });
     if (result.error) {
-        console.log("Validation Errors:", result.error.details);
+        // console.log("Validation Errors:", result.error.details);
         result.error.details[0].message = valMsgFormatter(result.error.details[0].message);
     }
     return result;
@@ -199,7 +199,7 @@ function validateTopicReorder(data) {
 
     let result = schema.validate(data, { abortEarly: false });
     if (result.error) {
-        console.log("Validation Errors:", result.error.details);
+        // console.log("Validation Errors:", result.error.details);
         result.error.details[0].message = valMsgFormatter(result.error.details[0].message);
     }
     return result;

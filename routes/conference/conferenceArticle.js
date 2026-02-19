@@ -23,7 +23,7 @@ router.post(
   identityManager(["admin", "superAdmin"]),
   async (req, res) => {
     try {
-      console.log("Save selections request:", req.body);
+      // console.log("Save selections request:", req.body);
       
       const { conferenceId, selections } = req.body;
 
@@ -56,7 +56,7 @@ router.post(
         }
       }
 
-      console.log("Selection array:", selectionArray);
+      // console.log("Selection array:", selectionArray);
 
       // Delete old selections for this conference
       await ConferenceArticleSelection.deleteMany({
@@ -99,7 +99,7 @@ router.post(
         }
       }
 
-      console.log("Unique selections:", uniqueSelections);
+      // console.log("Unique selections:", uniqueSelections);
 
       if (uniqueSelections.length === 0) {
         return res.json({
@@ -116,7 +116,7 @@ router.post(
         },
       );
 
-      console.log("Saved data count:", savedData.length);
+      // console.log("Saved data count:", savedData.length);
 
       res.status(200).json({
         success: true,
